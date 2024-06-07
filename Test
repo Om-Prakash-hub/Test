@@ -1,0 +1,20 @@
+pipeline {
+agent any
+stages {
+stage('Clone Repository') {
+steps {
+git url: 'https://github.com/Om-Prakash-hub/DevOps_Example.git', branch: 'main'
+}
+}
+stage('Build') {
+steps {
+sh 'javac DevOpsExample.java'
+}
+}
+stage('Run') {
+steps {
+sh 'java DevOpsExample'
+}
+}
+}
+}
